@@ -4,9 +4,9 @@ from rest_framework.decorators import api_view
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .serializer import UserSerializer
+from .serializer import UserSerializer, SellerSerializer
 from rest_framework.views import APIView
-from ..models import User
+from ..models import User, Seller
 from rest_framework.filters import SearchFilter, OrderingFilter
 
 from rest_framework.generics import ListCreateAPIView
@@ -87,4 +87,35 @@ class classUserList(ListCreateAPIView):
 class userDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.filter(is_superuser=False)
     serializer_class = UserSerializer
+
+
+#Seller Details
+
+class SellerRegisterView(APIView):
+    def post(self, request):
+        serializer = SellerSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        print('serializer',serializer.data)
+        return Response(serializer.data)
+    
+class classSellerList(ListCreateAPIView):
+    queryset = Seller.objects.filter(is_superuser=False)
+    serializer_class = SellerSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['first_name', 'email','last_name']
+
+
+@api_view(['POST'])
+def sellerUpdate(request, pk):
+    try:
+        seller = Seller.objects.get(id=pk)
+    except Seller.DoesNotExist:
+        return Response(status=404)
+
+    serializer = SellerSerializer(instance=seller, data=request.data)
+    if serializer.is_valid():
+        serializer.save(is_active=True)
+        print('updated',serializer.data)
+    return Response(serializer.errors, status=400)
 

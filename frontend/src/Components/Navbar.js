@@ -38,6 +38,7 @@ function Navbar() {
                                         <li>   {email && <button className="logout-button" onClick={logout}>
                                         <span>Logout</span> <span></span>
                                         </button>}</li>
+                                        <li>HI {email}</li>
                                     </ul>
                                     
                                 </nav>

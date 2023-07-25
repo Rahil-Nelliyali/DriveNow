@@ -13,6 +13,8 @@ import AdminHome from './Pages/Adminhome';
 import AdminSellerApprove from './Pages/AdminSellerApprove';
 import AdminSellerDetails from './Pages/AdminSellerDetails';
 import AdminUserDetails from './Pages/AdminUserDetails';
+import PrivateRoute from './helpers/PrivateRoute';
+
 
 function App() {
   return (
@@ -22,13 +24,17 @@ function App() {
         <Routes>
           <Route Component={LoginPage} path='/login'/>
           <Route Component={SignupPage} path='/signup'/>
-          <Route Component={HomePage} path='/'/>
           <Route Component={Cars} path='/cars'/>
 
           <Route Component={SellerLogin} path='/sellerlogin'/>
           <Route Component={SellerSignup} path='/sellersignup'/>
           <Route Component={SellerHome} path='/sellerhome'/>
          
+          <Route path='/' exact element={<PrivateRoute/>}>
+          <Route exact path='/' element={<HomePage />} />
+         </Route>
+
+
           <Route Component={AdminLogin} path='/adminlogin'/>
           <Route Component={AdminHome} path='/adminhome'/>
           <Route Component={AdminUserDetails} path='/userdetails'/>
