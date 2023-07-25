@@ -1,0 +1,53 @@
+/* dashboard.css */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+}
+
+.admin-dashboard {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .admin-dashboard h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .admin-stats .stat {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-stats .stat h2 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .admin-features h2 {
+    margin-bottom: 10px;
+  }
+  
+  .admin-features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-features li {
+    margin-bottom: 10px;
+  }
+  
+  /* Add more specific styles as needed */
+  

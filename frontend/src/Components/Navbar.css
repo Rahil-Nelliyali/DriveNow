@@ -1,0 +1,141 @@
+/* Reset default styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+}
+
+/* Navbar styles */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  z-index: 999; /* Ensure the navbar is on top of other elements */
+}
+
+.container-fluid {
+  padding: 10px;
+}
+
+ul#navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul#navigation li {
+  margin-right: 20px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+ul#navigation li:hover {
+  color: #ff6b6b; /* Change to your desired hover color */
+}
+
+ul.submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 150px;
+}
+
+ul.submenu li {
+  margin: 5px 0;
+}
+
+ul.submenu li:hover {
+  color: #ff6b6b; /* Change to your desired hover color */
+}
+
+.logo-img img {
+  height: 40px;
+}
+
+.book_room {
+  display: flex;
+  align-items: center;
+}
+
+.book_btn h1 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.book_btn h1:hover {
+  color: #ff6b6b; /* Change to your desired hover color */
+}
+
+.logout-button {
+  appearance: none;
+  background-color: transparent;
+  border: 0.125em solid #1A1A1A;
+  border-radius: 0.9375em;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 3.75em;
+  min-width: 0;
+  outline: none;
+  padding: 1em 2.3em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+ }
+ 
+ .logout-button:disabled {
+  pointer-events: none;
+ }
+ 
+ .logout-button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+ }
+ 
+ .logout-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+ }
+
+/* Media queries for responsiveness (customize as needed) */
+@media (max-width: 767px) {
+  .col-xl-5.col-lg-6 {
+      flex: 1;
+  }
+
+  .col-xl-2.col-lg-2 {
+      display: none;
+  }
+
+  .col-xl-5.col-lg-4.d-none.d-lg-block {
+      display: none;
+  }
+
+  .mobile_menu {
+      display: block;
+  }
+}
